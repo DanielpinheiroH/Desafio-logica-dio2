@@ -1,0 +1,54 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+// Função que calcula o saldo de vitórias
+int calcularSaldo(int vitorias, int derrotas) {
+    return vitorias - derrotas;
+}
+
+// Função que determina o nível do jogador com base nas vitórias
+const char* determinarNivel(int vitorias) {
+    if (vitorias < 10) {
+        return "Ferro";
+    } else if (vitorias >= 11 && vitorias <= 20) {
+        return "Bronze";
+    } else if (vitorias >= 21 && vitorias <= 50) {
+        return "Prata";
+    } else if (vitorias >= 51 && vitorias <= 80) {
+        return "Ouro";
+    } else if (vitorias >= 81 && vitorias <= 90) {
+        return "Diamante";
+    } else if (vitorias >= 91 && vitorias <= 100) {
+        return "Lendário";
+    } else {
+        return "Imortal";
+    }
+}
+
+int main() {
+    int vitorias, derrotas, saldo;
+    char repetir;
+
+    do {
+        // Entrada de dados
+        printf("Digite o número de vitórias: ");
+        scanf("%d", &vitorias);
+
+        printf("Digite o número de derrotas: ");
+        scanf("%d", &derrotas);
+
+        // Processamento
+        saldo = calcularSaldo(vitorias, derrotas);
+        const char* nivel = determinarNivel(vitorias);
+
+        // Saída
+        printf("\nO Herói tem de saldo de **%d** está no nível de **%s**\n", saldo, nivel);
+
+        // Verificar se o usuário quer repetir
+        printf("\nDeseja calcular novamente? (s/n): ");
+        scanf(" %c", &repetir);
+
+    } while (repetir == 's' || repetir == 'S');
+
+    return 0;
+}
