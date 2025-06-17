@@ -36,22 +36,19 @@ gcc -o rankeadas rankeadas.c
 No Windows (com GCC instalado):
 
 bash
-Copiar
-Editar
+
 gcc -o rankeadas.exe rankeadas.c
 rankeadas.exe
 🖥️ Exemplo de saída
 markdown
-Copiar
-Editar
+
 Digite o número de vitórias: 55
 Digite o número de derrotas: 12
 
 O Herói tem de saldo de **43** está no nível de **Ouro**
 📁 Estrutura
 bash
-Copiar
-Editar
+
 rankeadas/
 ├── rankeadas.c      # Código-fonte em C
 └── README.md        # Documentação do projeto
